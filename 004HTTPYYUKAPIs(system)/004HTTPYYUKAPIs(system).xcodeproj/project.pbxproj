@@ -13,6 +13,7 @@
 		7CAF150F1A14342600253E64 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF150E1A14342600253E64 /* Images.xcassets */; };
 		7CAF15121A14342600253E64 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7CAF15101A14342600253E64 /* LaunchScreen.xib */; };
 		7CAF151E1A14342600253E64 /* _04HTTPYYUKAPIs_system_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF151D1A14342600253E64 /* _04HTTPYYUKAPIs_system_Tests.swift */; };
+		7CBE68C41A1B37F400B6B27B /* JNYJ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CBE68C31A1B37F400B6B27B /* JNYJ.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		7CAF15171A14342600253E64 /* 004HTTPYYUKAPIs(system)Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "004HTTPYYUKAPIs(system)Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAF151C1A14342600253E64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CAF151D1A14342600253E64 /* _04HTTPYYUKAPIs_system_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _04HTTPYYUKAPIs_system_Tests.swift; sourceTree = "<group>"; };
+		7CBE68C31A1B37F400B6B27B /* JNYJ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JNYJ.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,8 @@
 			children = (
 				7CAF15071A14342600253E64 /* AppDelegate.swift */,
 				7CAF15091A14342600253E64 /* ViewController.swift */,
+				7CBE68C31A1B37F400B6B27B /* JNYJ.swift */,
+				7CBE68C21A1B37D800B6B27B /* AFNetworking */,
 				7CAF150B1A14342600253E64 /* Main.storyboard */,
 				7CAF150E1A14342600253E64 /* Images.xcassets */,
 				7CAF15101A14342600253E64 /* LaunchScreen.xib */,
@@ -110,6 +114,13 @@
 				7CAF151C1A14342600253E64 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7CBE68C21A1B37D800B6B27B /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CBE68C41A1B37F400B6B27B /* JNYJ.swift in Sources */,
 				7CAF150A1A14342600253E64 /* ViewController.swift in Sources */,
 				7CAF15081A14342600253E64 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +419,7 @@
 				7CAF15231A14342600253E64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CAF15241A14342600253E64 /* Build configuration list for PBXNativeTarget "004HTTPYYUKAPIs(system)Tests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +428,7 @@
 				7CAF15261A14342600253E64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
