@@ -16,5 +16,4 @@
 @property(nonatomic, strong)NSArray     *arrayContents;
 
 -(void)setContents:(NSArray *)array;
-
 @end

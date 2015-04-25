@@ -86,7 +86,7 @@
     static JNYJReachability *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        _sharedClient = [JNYJReachability reachabilityWithHostName:URL_API_DOMAIN];
+        _sharedClient = [JNYJReachability reachabilityForInternetConnection];//reachabilityWithHostName:URL_API_DOMAIN];
     });
     return _sharedClient;
 }

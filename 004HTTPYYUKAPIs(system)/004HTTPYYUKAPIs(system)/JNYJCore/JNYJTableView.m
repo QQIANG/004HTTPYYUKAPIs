@@ -22,7 +22,7 @@
         }else{
             self.arrayContentsALL = [NSMutableArray array];
         }
-        for (int i =0; [array_new count]; i++) {
+        for (int i =0; i<[array_new count]; i++) {
             [self.arrayContentsALL addObject:[array_new objectAtIndex:i]];
         }
         self.arrayContents = [NSArray arrayWithArray:self.arrayContentsALL];
@@ -30,5 +30,11 @@
         self.arrayContentsALL = array_new;
         self.arrayContents = [NSArray arrayWithArray:self.arrayContentsALL];
     }
+    if ([self.arrayContents count]>0) {
+        self.isLoaded = YES;
+    }else{
+        self.isLoaded = NO;
+    }
+    self.isLoadMore = NO;
 }
 @end

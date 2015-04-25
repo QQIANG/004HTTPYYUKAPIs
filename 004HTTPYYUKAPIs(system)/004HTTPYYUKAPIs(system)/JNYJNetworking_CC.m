@@ -79,6 +79,46 @@
     
     return mainInterfaceCaller;
 }
++(JNYJNetworking_CC *)uploadToPath:(NSString *)serviceURLPath delegate:(id)delegate{
+    //init InterfaceCaller
+    JNYJNetworking_CC *mainInterfaceCaller = [[JNYJNetworking_CC alloc] init];
+    [mainInterfaceCaller setDelegate:delegate];
+    
+    NSMutableURLRequest *request= [[NSMutableURLRequest alloc] init];
+    [request setURL:[NSURL URLWithString:serviceURLPath]];
+    [request setHTTPMethod:@"POST"];
+    
+    NSMutableData *postbody = [NSMutableData data];
+    
+    [postbody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"user_id\"\r\n\r\n%@",
+                           @"userid"]
+                          dataUsingEncoding:NSUTF8StringEncoding]];
+    [postbody appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",@"boundary"]
+                          dataUsingEncoding:NSUTF8StringEncoding]];
+    
+//    [postbody appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"video\"; filename=\"%@\"\r\n", @"a.mov"]
+//                          dataUsingEncoding:NSUTF8StringEncoding]];
+//    [postbody appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"]
+//                          dataUsingEncoding:NSUTF8StringEncoding]];
+    
+//    [postbody appendData:[NSData dataWithData:@"file"]];
+//    [postbody appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",@"boundary"]
+//                          dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:postbody];
+    
+    
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:request
+                                                                     delegate:self];
+    
+    if(theConnection) {
+        [JNYJNetworking_CC doLogForTemp: @"theConnection called"];
+    }else {
+        [JNYJNetworking_CC doLogForTemp: @"theConnection is NULL"];
+        if (delegate) [delegate JNYJNetworking_CC:mainInterfaceCaller EndWithData:nil];
+    }
+    
+    return mainInterfaceCaller;
+}
 
 - (void)dealloc
 {
@@ -113,6 +153,17 @@
 //    [self release], self = nil;
 }
 
+-(void)connection:(NSURLConnection *)connection
+  didSendBodyData:(NSInteger)bytesWritten
+totalBytesWritten:(NSInteger)totalBytesWritten
+totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite{
+    //
+    
+    //
+}
+
+
+#pragma mark DealWith data
 - (void)dealWithResponse:(NSString *)responseString
 {
     NSDictionary *dictobj = [NSString dic_JSON:responseString];//[responseString dic_];
